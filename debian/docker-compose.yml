@@ -1,0 +1,13 @@
+version: '2.0'
+
+services:
+    wine:
+        build: .
+        container_name: "wine"
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix:ro
+        environment:
+            DISPLAY: ${DISPLAY}
+        command:
+            - ${COMMAND}
+
